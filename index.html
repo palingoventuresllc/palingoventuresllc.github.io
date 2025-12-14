@@ -1,55 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Palingo Ventures LLC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 16px; color:#111; line-height:1.6; }
+    .card { border:1px solid #e5e5e5; border-radius:10px; padding:18px; margin:18px 0; }
+    label { display:block; margin-top:12px; font-weight:600; }
+    input, textarea { width:100%; padding:10px; border:1px solid #ccc; border-radius:8px; font-size:16px; }
+    button { margin-top:16px; padding:10px 16px; font-size:16px; border:0; border-radius:8px; cursor:pointer; }
+    .muted { color:#555; font-size: 14px; }
+    a { color: #0b57d0; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; line-height: 1.6; color:#111;">
+<body>
+
   <h1>Palingo Ventures LLC</h1>
-
-  <p>
-    Palingo Ventures LLC is a real estate solutions and home buying company based in Texas.
-    We work directly with homeowners who are interested in selling their property quickly.
-    Our process is simple, transparent, and designed to help homeowners understand their options.
+  <p class="muted">
+    Real estate solutions and home buying assistance in Texas. We help homeowners request information and explore selling options.
   </p>
 
-  <h2>How It Works</h2>
-  <ol>
-    <li>Homeowners contact us with details about their property.</li>
-    <li>We review the information and present a potential solution or offer.</li>
-    <li>If the homeowner decides to move forward, we coordinate with a title company and close on their preferred timeline.</li>
-  </ol>
+  <div class="card">
+    <h2>Contact Information</h2>
+    <p>
+      <strong>Contact Name:</strong> Peter Palingo<br>
+      <strong>Phone:</strong> 972-207-4989<br>
+      <strong>Email:</strong> ryan@prestigehomeoffer.com
+    </p>
+  </div>
 
-  <h2>Contact Information</h2>
-  <p>
-    Business Name: Palingo Ventures LLC<br>
-    Contact Name: Peter Palingo<br>
-    Phone: 972-207-4989<br>
-    Email: ryan@prestigehomeoffer.com
-  </p>
+  <div class="card">
+    <h2>Request Information</h2>
 
-  <h2>SMS Consent & Communication</h2>
-  <p>
-    By submitting your information through this website, you agree to receive text messages or phone calls
-    from Palingo Ventures LLC related to your real estate inquiry.
-    Message and data rates may apply. You may opt out at any time by replying STOP.
-  </p>
+    <form id="leadForm" onsubmit="handleSubmit(event)">
+      <label for="name">Full Name</label>
+      <input id="name" name="name" required>
 
-  <h2>Privacy Policy</h2>
-  <p>
-    We collect personal information such as name, phone number, email address, and property details
-    solely for the purpose of responding to real estate inquiries.
-    We do not sell or share personal information for marketing purposes.
-    Information may be shared with third parties such as title companies only when necessary
-    to facilitate a real estate transaction.
-  </p>
+      <label for="phone">Phone Number</label>
+      <input id="phone" name="phone" type="tel" required>
 
-  <h2>Terms of Service</h2>
-  <p>
-    By using this website, you acknowledge that you are voluntarily submitting information.
-    Palingo Ventures LLC makes no guarantee that an offer will be provided.
-    You may opt out of SMS communications at any time by replying STOP.
-  </p>
+      <label for="property">Property Address</label>
+      <input id="property" name="property" required>
+
+      <label for="message">Message (optional)</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <label style="font-weight:normal; margin-top:14px;">
+        <input type="checkbox" id="consent" required>
+        <strong>SMS Consent:</strong> By checking this box and submitting this form, you agree to receive SMS messages and phone calls from Palingo Ventures LLC related to your real estate inquiry, including follow-ups and appointment confirmations. Message and data rates may apply. Reply <strong>STOP</strong> to opt out, <strong>HELP</strong> for help. Consent is not a condition of purchase.
+      </label>
+
+      <p class="muted" style="margin-top:12px;">
+        See our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms & Conditions</a>.
+      </p>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="thankYou" class="card" style="display:none;">
+      <h3>Thanks — we received your request.</h3>
+      <p>We’ll contact you shortly. Reply STOP to opt out of SMS at any time.</p>
+    </div>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      document.getElementById("leadForm").style.display = "none";
+      document.getElementById("thankYou").style.display = "block";
+      // Note: This is a front-end demo form. For a real lead system you'd post to a server.
+    }
+  </script>
+
 </body>
 </html>
