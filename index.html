@@ -14,11 +14,11 @@
         .btn-primary { background: #e63946; border: none; }
         .btn-primary:hover { background: #c1121f; }
         footer { background: #1d3557; color: white; }
+        .fs-small { font-size: 12px; line-height: 1.4; color: #666; }
     </style>
 </head>
 <body>
 
-    <!-- Hero Section -->
     <section class="hero text-center">
         <div class="container">
             <h1 class="display-3">We Buy Houses Cash – Any Condition, Fast Close</h1>
@@ -27,7 +27,6 @@
         </div>
     </section>
 
-    <!-- Benefits -->
     <section class="py-5 bg-light">
         <div class="container">
             <div class="row text-center">
@@ -47,7 +46,6 @@
         </div>
     </section>
 
-    <!-- Form Section (Critical for opt-in) -->
     <section id="form" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Get Your No-Obligation Cash Offer</h2>
@@ -66,24 +64,36 @@
                             <label class="form-label">Property Address</label>
                             <input type="text" name="address" class="form-control" required>
                         </div>
-                        <div class="form-check mb-3">
-                            <input type="checkbox" class="form-check-input" id="consent" required>
-                            <label class="form-check-label" for="consent">
-                                By providing my phone number, I agree to recieve marketing and promotional texts by Palingo Ventures LLC. I understand I can opt out at anytime by replying STOP. Message and data rates may apply.
+
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="transactional_consent">
+                            <label class="form-check-label fs-small" for="transactional_consent">
+                                I agree to receive transactional texts from Palingo Ventures LLC regarding my inquiry. Stop to opt-out.
                             </label>
                         </div>
+                        <div class="form-check mb-2">
+                            <input type="checkbox" class="form-check-input" id="marketing_consent">
+                            <label class="form-check-label fs-small" for="marketing_consent">
+                                I agree to receive marketing texts from Palingo Ventures LLC. Msg & data rates apply. Reply STOP to end.
+                            </label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="terms_consent" required>
+                            <label class="form-check-label fs-small" for="terms_consent">
+                                I accept the <a href="privacy.html">Privacy Policy & Terms</a> (Required).
+                            </label>
+                        </div>
+
                         <button type="submit" class="btn btn-primary btn-lg w-100">Submit & Get Offer</button>
                     </form>
-                    <p class="text-center mt-3 small">We respect your privacy. See our <a href="privacy.html">Privacy Policy</a>.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer with legal links -->
     <footer class="py-4">
         <div class="container text-center">
-            <p>&copy; 2025 Palingo Ventures LLC. All rights reserved.</p>
+            <p>&copy; 2026 Palingo Ventures LLC. All rights reserved.</p>
             <p><a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="terms.html" class="text-white">Terms & Conditions</a></p>
             <p>Palingo Ventures LLC buys houses for cash and offers real estate solutions nationwide. We are a real estate investment company.</p>
         </div>
